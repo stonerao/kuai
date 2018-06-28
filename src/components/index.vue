@@ -4,6 +4,7 @@
 
         </div>
         <div class="center" v-else>
+            <span class="click-p" @click="jx">点击有惊喜</span>
             <canvas id="c"></canvas>
         </div>
     </div>
@@ -16,8 +17,7 @@ export default {
     return {
       arr: [
         ["庞婷婷"],
-        [
-          "是谁",
+        [ 
           "她是谁",
           "她是谁",
           "她是谁",
@@ -28,18 +28,28 @@ export default {
           "她是谁",
           "她是谁",
           "她是谁",
-          "她是谁",
-          "她是谁",
-          "她是谁"
         ],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"],
-        ["我媳妇儿", "媳妇儿"]
+        ["我媳妇儿", "媳妇儿"],  
+        ["我是媳妇儿是一个"], 
+        ["美丽","美丽","美丽","美丽","美丽","美丽","美丽","美丽","美丽","美丽"], 
+        ["善良","善良","善良","善良","善良"],  
+        ["优雅","优雅","优雅","优雅","优雅","优雅","优雅","优雅","优雅","优雅","优雅","优雅"], 
+        ["脱俗","脱俗","脱俗","抽屉","脱俗","脱俗","脱俗","脱俗","脱俗","脱俗","脱俗","脱俗","脱俗","脱俗","脱俗"], 
+        ["可爱","可爱","可爱","可爱","可爱","可爱","可爱","可爱"], 
+        ["天真","天真","抽屉","天真","天真","天真"], 
+        ["温柔","温柔","温柔","温柔","温柔","温柔","温柔","温柔","温柔"], 
+        ["多才","多才","多才","多才","多才","多才","多才"],  
+        ["贤惠","贤惠","贤惠","贤惠","贤惠","贤惠","贤惠","贤惠","贤惠","贤惠","贤惠"],
+        ["好媳妇儿"],
+        ["这么好的媳妇儿"],
+        ["我要娶她"],
+        ["要给她买小裙裙"], 
+        ["买好吃的"], 
+        ["车上有礼物"], 
+        ["亲爱的","媳妇"],
+        ["你这么的可爱"], 
+        ["漂亮"],
+        ["我要送一你"]   
       ],
       htmlBox: "",
       isGood: false
@@ -90,6 +100,10 @@ export default {
     demo(this.arr);
   },
   methods: {
+    jx(){
+      alert("恭喜你，拥有了老公！") 
+      alert("惊喜在他那！")
+    },
     huahua() {
       var canvas = document.getElementById("c");
       var context = canvas.getContext("2d");
@@ -187,7 +201,7 @@ export default {
           if (point) {
             var z = point.z;
             var x = parseInt(point.x * SIZE / z - h) - 150;
-            var y = parseInt(point.y * SIZE / z - h);
+            var y = parseInt(point.y * SIZE / z - h)-50;
             var zBufferIndex = y * SIZE + x;
             if (
               typeof zBuffer[zBufferIndex] === "undefined" ||
@@ -223,6 +237,14 @@ export default {
   left: 0;
   bottom: 0;
   background: #000;
+}
+.click-p{
+  position:absolute;
+  left:5px;
+  top:2px;
+  font-size:12px;
+  color:#ccc;
+
 }
 </style>
 
